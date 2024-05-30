@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  front:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+    container_name: chat-front-end
+    depends_on:
+      - back
+    ports:
+      - "3000:3000"
+    networks:
+      - mynetwork
+  back:
+    build:
+      context: ./back-end/chat-back-end
+      dockerfile: Dockerfile
+    container_name: chat-back-end
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=root
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - "8080:8080"
+    networks:
+      - mynetwork
+
+  db:
+    image: postgres
+    container_name: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - mynetwork
+    volumes:
+    - ./init-scripts:/docker-entrypoint-initdb.d
+
+networks:
+  mynetwork:
+    driver: bridge
