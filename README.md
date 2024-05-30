@@ -98,4 +98,4 @@ The purpose of the project was to help me gain knowledge about:
   <h2 id="#database">Database</h2>
   <br>
 
-![image]()
+![image](https://github.com/KristiyanMitrofanov/RealTimeChatApp-BE/blob/main/database-diagram.png)
