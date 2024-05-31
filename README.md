@@ -17,7 +17,7 @@ This project is a real-time chat application that supports multiple chat partici
     </ul>
 <br>
 
-<h2 id="knowledge">Knowledge Goals</h2>
+<h2 id="#knowledge">Knowledge Goals</h2>
 
 The purpose of the project was to help me gain knowledge about:
 <ul>
