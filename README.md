@@ -27,7 +27,6 @@ The purpose of the project was to help me gain knowledge about:
   <li>implementing <strong>Docker</strong> for containerization of the backend and frontend components for improved portability, scalability, and deployment consistency</li>
   <li>implementing <strong>Docker-compose</strong> in order to ease the management and orchestration of the multi-container Docker app</li>
   <li>implementing <strong>JWT Authentication</strong> with <strong>Spring Security</strong> to provide more secure authentication and authorization mechanisms</li>
-  <li>creating a <strong>Single-Page-Application</strong> for the front-end</li>
   <li>creating a <strong>CI/CD</strong> pipeline using <strong>TeamCity</strong></li>
   <li>creating a Single-Page Application that enhances the UI/UX using <strong>lit-html</strong> and <strong>page.js</strong></li>
 </ul>
