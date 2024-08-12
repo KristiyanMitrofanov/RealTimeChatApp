@@ -29,6 +29,7 @@ The purpose of the project was to help me gain knowledge about:
   <li>implementing <strong>JWT Authentication</strong> with <strong>Spring Security</strong> to provide more secure authentication and authorization mechanisms</li>
   <li>creating a <strong>Single-Page-Application</strong> for the front-end</li>
   <li>creating a <strong>CI/CD</strong> pipeline using <strong>TeamCity</strong></li>
+  <li>creating a Single-Page Application that enhances the UI/UX using <strong>lit-html</strong> and <strong>page.js</strong></li>
 </ul>
 
 <br>
