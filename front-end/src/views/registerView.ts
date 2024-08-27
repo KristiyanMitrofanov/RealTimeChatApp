@@ -1,11 +1,13 @@
-import { render, html } from '../node_modules/lit-html/lit-html.js';
-import { navigationViewTemplate } from './navigationView.js';
-import { disconnectFromSocket} from "../services/websocketService.js";
-import { registerHandler } from '../utilities/handlers.js';
+import { render, html, TemplateResult } from 'lit-html';
+import { navigationViewTemplate } from './navigationView';
+import { disconnectFromSocket } from "../services/websocketService";
+import { registerHandler } from '../utilities/handlers';
+import { Context } from 'page';
+import { Handler } from '../utilities/types';
 
-const withContext = (handler, ctx) => (e) => handler(e, ctx);
+const withContext = (handler: Handler, ctx: Context) => (e: Event) => handler(e, ctx);
 
-const registerViewTemplate = (registerHandler, ctx) => html`
+const registerViewTemplate = (registerHandler: Handler, ctx: Context): TemplateResult => html`
 ${navigationViewTemplate(localStorage.getItem('token'))}
 <div class="main-container">
 <h3 class="heading">Please fill in the register form:</h3>
@@ -33,9 +35,9 @@ ${navigationViewTemplate(localStorage.getItem('token'))}
 
 </div>
 `
-const root = document.getElementById('root');
+const root = document.getElementById('root') as HTMLElement;
 
-export const registerView = (ctx) => {
+export const registerView = (ctx: Context) => {
     disconnectFromSocket();
     render(registerViewTemplate(registerHandler, ctx), root);
 };
